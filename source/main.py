@@ -1,23 +1,20 @@
 __author__ = 'mesfinmebrate'
 
-from graph import graph
+from model import model
 
 def main():
 
-    s = graph.Node("S")
-    a = graph.Node("A")
-    b = graph.Node("B")
-    c = graph.Node("C")
-    g = graph.Node("G")
+    s, a, b, c, g = "S", "A", "B", "C", "G"
 
-    s.add_vertex(a)
-    s.add_vertex(b)
-    s.add_vertex(c)
-    s.get_vertex("A").add_vertex(b)
-    s.get_vertex("A").add_vertex(c)
-    s.get_vertex("C").add_vertex(g)
+    graph = model.Graph()
+    graph.add_edge(s, a)
+    graph.add_edge(s, b)
+    graph.add_edge(s, c)
+    graph.add_edge(a, b)
+    graph.add_edge(a, c)
+    graph.add_edge(c, g)
 
-    print "A"
+    print graph.get_node(a)
 
 
 if __name__ == "__main__":
